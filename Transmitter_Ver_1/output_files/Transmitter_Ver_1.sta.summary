@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -9.174
+TNS   : -730.441
+
+Type  : Slow 1200mV 85C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : -1.013
+TNS   : -16.381
+
+Type  : Slow 1200mV 85C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : 0.052
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : 0.481
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : -1.996
+TNS   : -121.877
+
+Type  : Slow 1200mV 85C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : -0.460
+TNS   : -0.460
+
+Type  : Slow 1200mV 85C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : -0.119
+TNS   : -0.119
+
+Type  : Slow 1200mV 85C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -229.160
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : -1.285
+TNS   : -60.395
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -8.188
+TNS   : -644.379
+
+Type  : Slow 1200mV 0C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : -0.843
+TNS   : -11.831
+
+Type  : Slow 1200mV 0C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : 0.112
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : 0.510
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -1.818
+TNS   : -108.806
+
+Type  : Slow 1200mV 0C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : -0.445
+TNS   : -0.445
+
+Type  : Slow 1200mV 0C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : -0.132
+TNS   : -0.132
+
+Type  : Slow 1200mV 0C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -229.160
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : -1.285
+TNS   : -60.395
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : -1.285
+TNS   : -1.285
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.901
+TNS   : -284.152
+
+Type  : Fast 1200mV 0C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : -0.027
+TNS   : -0.027
+
+Type  : Fast 1200mV 0C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : 0.290
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : -1.088
+TNS   : -79.326
+
+Type  : Fast 1200mV 0C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : -0.221
+TNS   : -0.221
+
+Type  : Fast 1200mV 0C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : -0.066
+TNS   : -0.066
+
+Type  : Fast 1200mV 0C Model Hold 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : 0.188
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -230.581
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2|q'
+Slack : -1.000
+TNS   : -47.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0|q'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1|q'
+Slack : -1.000
+TNS   : -1.000
+
+------------------------------------------------------------

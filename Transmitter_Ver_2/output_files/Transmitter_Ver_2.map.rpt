@@ -1,0 +1,1785 @@
+Analysis & Synthesis report for Transmitter_Ver_2
+Tue Dec 17 00:34:41 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |transmit_16qam
+ 13. Parameter Settings for User Entity Instance: clock_generator_2:C
+ 14. Parameter Settings for User Entity Instance: pn_gen:S
+ 15. Parameter Settings for User Entity Instance: register:R
+ 16. Parameter Settings for User Entity Instance: filter_16qam:QAM
+ 17. Parameter Settings for User Entity Instance: filter_16qam:QAM|tdl:I0
+ 18. Parameter Settings for User Entity Instance: filter_16qam:QAM|tdl:I1
+ 19. Parameter Settings for User Entity Instance: filter_16qam:QAM|tdl:Q0
+ 20. Parameter Settings for User Entity Instance: filter_16qam:QAM|tdl:Q1
+ 21. Parameter Settings for User Entity Instance: filter_16qam:QAM|mux_4to2:M
+ 22. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R000
+ 23. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R001
+ 24. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R002
+ 25. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R003
+ 26. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R004
+ 27. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R005
+ 28. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R006
+ 29. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R007
+ 30. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R008
+ 31. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R009
+ 32. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R010
+ 33. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R011
+ 34. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R012
+ 35. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R013
+ 36. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R014
+ 37. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R015
+ 38. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R016
+ 39. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R100
+ 40. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R101
+ 41. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R102
+ 42. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R103
+ 43. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R104
+ 44. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R105
+ 45. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R106
+ 46. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R107
+ 47. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R108
+ 48. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R109
+ 49. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R110
+ 50. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R111
+ 51. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R112
+ 52. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R113
+ 53. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R114
+ 54. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R115
+ 55. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R116
+ 56. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R200
+ 57. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R201
+ 58. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R202
+ 59. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R203
+ 60. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R204
+ 61. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R205
+ 62. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R206
+ 63. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R207
+ 64. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R208
+ 65. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R209
+ 66. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R210
+ 67. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R211
+ 68. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R212
+ 69. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R213
+ 70. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R214
+ 71. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R215
+ 72. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R216
+ 73. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R300
+ 74. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R301
+ 75. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R302
+ 76. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R303
+ 77. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R304
+ 78. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R305
+ 79. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R306
+ 80. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R307
+ 81. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R308
+ 82. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R309
+ 83. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R310
+ 84. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R311
+ 85. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R312
+ 86. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R313
+ 87. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R314
+ 88. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R315
+ 89. Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R316
+ 90. Port Connectivity Checks: "pn_gen:S"
+ 91. Port Connectivity Checks: "clock_generator_2:C"
+ 92. Elapsed Time Per Partition
+ 93. Analysis & Synthesis Messages
+ 94. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Dec 17 00:34:41 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Transmitter_Ver_2                               ;
+; Top-level Entity Name              ; transmit_16qam                                  ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 662                                             ;
+;     Total combinational functions  ; 584                                             ;
+;     Dedicated logic registers      ; 97                                              ;
+; Total registers                    ; 97                                              ;
+; Total pins                         ; 19                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; transmit_16qam     ; Transmitter_Ver_2  ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
+; transmit_16qam.v                 ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/transmit_16qam.v    ;         ;
+; tdl.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tdl.v               ;         ;
+; register.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/register.v          ;         ;
+; pn_gen.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/pn_gen.v            ;         ;
+; mux_4to2.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/mux_4to2.v          ;         ;
+; filter_16qam.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/filter_16qam.v      ;         ;
+; coeff_rom.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/coeff_rom.v         ;         ;
+; clock_generator_2.v              ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/clock_generator_2.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                ;
++---------------------------------------------+------------------------------+
+; Resource                                    ; Usage                        ;
++---------------------------------------------+------------------------------+
+; Estimated Total logic elements              ; 662                          ;
+;                                             ;                              ;
+; Total combinational functions               ; 584                          ;
+; Logic element usage by number of LUT inputs ;                              ;
+;     -- 4 input functions                    ; 216                          ;
+;     -- 3 input functions                    ; 338                          ;
+;     -- <=2 input functions                  ; 30                           ;
+;                                             ;                              ;
+; Logic elements by mode                      ;                              ;
+;     -- normal mode                          ; 397                          ;
+;     -- arithmetic mode                      ; 187                          ;
+;                                             ;                              ;
+; Total registers                             ; 97                           ;
+;     -- Dedicated logic registers            ; 97                           ;
+;     -- I/O registers                        ; 0                            ;
+;                                             ;                              ;
+; I/O pins                                    ; 19                           ;
+; Embedded Multiplier 9-bit elements          ; 0                            ;
+; Maximum fan-out node                        ; clock_generator_2:C|count[2] ;
+; Maximum fan-out                             ; 209                          ;
+; Total fan-out                               ; 2248                         ;
+; Average fan-out                             ; 3.13                         ;
++---------------------------------------------+------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
+; |transmit_16qam            ; 584 (0)           ; 97 (0)       ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |transmit_16qam                                 ; work         ;
+;    |clock_generator_2:C|   ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|clock_generator_2:C             ; work         ;
+;    |filter_16qam:QAM|      ; 581 (449)         ; 82 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM                ; work         ;
+;       |coeff_rom:R001|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R001 ; work         ;
+;       |coeff_rom:R003|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R003 ; work         ;
+;       |coeff_rom:R004|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R004 ; work         ;
+;       |coeff_rom:R005|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R005 ; work         ;
+;       |coeff_rom:R006|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R006 ; work         ;
+;       |coeff_rom:R007|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R007 ; work         ;
+;       |coeff_rom:R008|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R008 ; work         ;
+;       |coeff_rom:R009|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R009 ; work         ;
+;       |coeff_rom:R010|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R010 ; work         ;
+;       |coeff_rom:R011|     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R011 ; work         ;
+;       |coeff_rom:R012|     ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R012 ; work         ;
+;       |coeff_rom:R013|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R013 ; work         ;
+;       |coeff_rom:R014|     ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R014 ; work         ;
+;       |coeff_rom:R015|     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R015 ; work         ;
+;       |coeff_rom:R016|     ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R016 ; work         ;
+;       |coeff_rom:R102|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R102 ; work         ;
+;       |coeff_rom:R103|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R103 ; work         ;
+;       |coeff_rom:R104|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R104 ; work         ;
+;       |coeff_rom:R106|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R106 ; work         ;
+;       |coeff_rom:R107|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R107 ; work         ;
+;       |coeff_rom:R108|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R108 ; work         ;
+;       |coeff_rom:R109|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R109 ; work         ;
+;       |coeff_rom:R110|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R110 ; work         ;
+;       |coeff_rom:R111|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R111 ; work         ;
+;       |coeff_rom:R112|     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R112 ; work         ;
+;       |coeff_rom:R113|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R113 ; work         ;
+;       |coeff_rom:R114|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R114 ; work         ;
+;       |coeff_rom:R115|     ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R115 ; work         ;
+;       |coeff_rom:R209|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R209 ; work         ;
+;       |coeff_rom:R211|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R211 ; work         ;
+;       |coeff_rom:R213|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R213 ; work         ;
+;       |coeff_rom:R214|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R214 ; work         ;
+;       |coeff_rom:R215|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R215 ; work         ;
+;       |coeff_rom:R303|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R303 ; work         ;
+;       |coeff_rom:R310|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R310 ; work         ;
+;       |coeff_rom:R313|     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R313 ; work         ;
+;       |coeff_rom:R314|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R314 ; work         ;
+;       |coeff_rom:R315|     ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|coeff_rom:R315 ; work         ;
+;       |mux_4to2:M|         ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|mux_4to2:M     ; work         ;
+;       |tdl:I0|             ; 0 (0)             ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|tdl:I0         ; work         ;
+;       |tdl:I1|             ; 0 (0)             ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|tdl:I1         ; work         ;
+;       |tdl:Q0|             ; 0 (0)             ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|tdl:Q0         ; work         ;
+;       |tdl:Q1|             ; 0 (0)             ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|filter_16qam:QAM|tdl:Q1         ; work         ;
+;    |pn_gen:S|              ; 1 (1)             ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|pn_gen:S                        ; work         ;
+;    |register:R|            ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_16qam|register:R                      ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------+
+; Registers Removed During Synthesis                                    ;
++---------------------------------------+-------------------------------+
+; Register name                         ; Reason for Removal            ;
++---------------------------------------+-------------------------------+
+; pn_gen:S|state[1]                     ; Merged with register:R|out[0] ;
+; pn_gen:S|state[2]                     ; Merged with register:R|out[1] ;
+; register:R|out[2]                     ; Merged with pn_gen:S|state[3] ;
+; pn_gen:S|state[4]                     ; Merged with register:R|out[3] ;
+; Total Number of Removed Registers = 4 ;                               ;
++---------------------------------------+-------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 97    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 83    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; pn_gen:S|pn_out                        ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux234 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux218 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux208 ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux192 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux175 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux161 ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux145 ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux132 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux113 ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux95  ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux85  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux67  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux53  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux39  ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux28  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux10  ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux100 ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 12 LEs               ; 2 LEs                  ; No         ; |transmit_16qam|filter_16qam:QAM|Mux42  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |transmit_16qam ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; SPS            ; 8     ; Signed Integer                                        ;
+; BIT_SYM        ; 4     ; Signed Integer                                        ;
+; BIT_DAC        ; 14    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_generator_2:C ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; MOD            ; 8     ; Signed Integer                          ;
+; BITS           ; 3     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pn_gen:S ;
++----------------+---------------+----------------------+
+; Parameter Name ; Value         ; Type                 ;
++----------------+---------------+----------------------+
+; SEED           ; 000000000001  ; Unsigned Binary      ;
+; GEN_POLY       ; 1000011010001 ; Unsigned Binary      ;
++----------------+---------------+----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register:R ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; SIZE           ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; SPS            ; 8     ; Signed Integer                       ;
+; SPAN           ; 16    ; Signed Integer                       ;
+; BIT_SYM        ; 4     ; Signed Integer                       ;
+; BIT_WIDTH      ; 15    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|tdl:I0 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; SPAN           ; 16    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|tdl:I1 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; SPAN           ; 16    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|tdl:Q0 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; SPAN           ; 16    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|tdl:Q1 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; SPAN           ; 16    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|mux_4to2:M ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; SPAN           ; 16    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R000                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_0.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R001                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_1.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R002                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_2.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R003                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_3.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R004                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_4.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R005                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_5.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R006                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_6.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R007                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_7.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R008                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_8.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R009                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_9.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R010                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_10.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R011                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_11.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R012                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_12.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R013                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_13.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R014                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_14.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R015                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_15.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R016                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_16.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R100                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_0.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R101                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_1.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R102                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_2.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R103                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_3.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R104                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_4.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R105                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_5.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R106                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_6.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R107                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_7.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R108                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_8.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R109                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_9.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R110                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_10.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R111                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_11.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R112                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_12.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R113                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_13.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R114                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_14.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R115                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_15.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R116                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P1_16.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R200                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_0.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R201                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_1.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R202                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_2.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R203                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_3.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R204                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_4.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R205                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_5.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R206                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_6.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R207                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_7.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R208                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_8.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R209                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_9.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R210                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_10.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R211                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_11.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R212                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_12.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R213                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_13.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R214                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_14.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R215                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_15.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R216                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M1_16.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R300                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_0.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R301                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_1.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R302                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_2.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R303                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_3.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R304                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_4.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R305                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_5.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R306                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_6.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R307                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_7.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R308                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_8.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R309                                       ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                            ; Type           ;
++----------------+----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_9.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                               ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R310                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_10.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R311                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_11.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R312                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_12.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R313                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_13.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R314                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_14.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R315                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_15.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_16qam:QAM|coeff_rom:R316                                        ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                             ; Type           ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_M3_16.txt ; String         ;
+; BIT_WIDTH      ; 15                                                                                ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                 ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pn_gen:S"                                                                                                   ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; pn_roll ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; state   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_generator_2:C"                                                                                           ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; carry      ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; clock_mod4 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Dec 17 00:34:35 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Transmitter_Ver_2 -c Transmitter_Ver_2
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file transmit_16qam.v
+    Info (12023): Found entity 1: transmit_16qam
+Info (12021): Found 1 design units, including 1 entities, in source file transmit_qpsk.v
+    Info (12023): Found entity 1: transmit_qpsk
+Info (12021): Found 1 design units, including 1 entities, in source file tdl.v
+    Info (12023): Found entity 1: tdl
+Info (12021): Found 1 design units, including 1 entities, in source file tb_transmit_qpsk.v
+    Info (12023): Found entity 1: tb_transmit_qpsk
+Info (12021): Found 1 design units, including 1 entities, in source file tb_transmit_16qam.v
+    Info (12023): Found entity 1: tb_transmit_16qam
+Info (12021): Found 1 design units, including 1 entities, in source file tb_tdl.v
+    Info (12023): Found entity 1: tb_tdl
+Info (12021): Found 1 design units, including 1 entities, in source file tb_pn_gen.v
+    Info (12023): Found entity 1: tb_pn_gen
+Info (12021): Found 1 design units, including 1 entities, in source file tb_clock_generator_2.v
+    Info (12023): Found entity 1: tb_clock_generator_2
+Info (12021): Found 1 design units, including 1 entities, in source file tb_clock_generator.v
+    Info (12023): Found entity 1: tb_clock_generator
+Info (12021): Found 1 design units, including 1 entities, in source file register.v
+    Info (12023): Found entity 1: register
+Info (12021): Found 1 design units, including 1 entities, in source file pn_gen_test.v
+    Info (12023): Found entity 1: pn_gen_test
+Info (12021): Found 1 design units, including 1 entities, in source file pn_gen.v
+    Info (12023): Found entity 1: pn_gen
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4to2.v
+    Info (12023): Found entity 1: mux_4to2
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2to1.v
+    Info (12023): Found entity 1: mux_2to1
+Info (12021): Found 1 design units, including 1 entities, in source file filter_qpsk.v
+    Info (12023): Found entity 1: filter_qpsk
+Info (12021): Found 1 design units, including 1 entities, in source file filter_16qam.v
+    Info (12023): Found entity 1: filter_16qam
+Info (12021): Found 1 design units, including 1 entities, in source file d_filp_flop.v
+    Info (12023): Found entity 1: d_filp_flop
+Info (12021): Found 1 design units, including 1 entities, in source file coeff_rom.v
+    Info (12023): Found entity 1: coeff_rom
+Info (12021): Found 1 design units, including 1 entities, in source file clock_generator_2.v
+    Info (12023): Found entity 1: clock_generator_2
+Info (12021): Found 1 design units, including 1 entities, in source file clock_generator.v
+    Info (12023): Found entity 1: clock_generator
+Info (12127): Elaborating entity "transmit_16qam" for the top level hierarchy
+Info (12128): Elaborating entity "clock_generator_2" for hierarchy "clock_generator_2:C"
+Info (12128): Elaborating entity "pn_gen" for hierarchy "pn_gen:S"
+Info (12128): Elaborating entity "register" for hierarchy "register:R"
+Info (12128): Elaborating entity "filter_16qam" for hierarchy "filter_16qam:QAM"
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "rom" into its bus
+Info (12128): Elaborating entity "tdl" for hierarchy "filter_16qam:QAM|tdl:I0"
+Info (12128): Elaborating entity "mux_4to2" for hierarchy "filter_16qam:QAM|mux_4to2:M"
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R000"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R001"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R002"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R003"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R004"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R005"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R006"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R007"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R008"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R009"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R010"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R011"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R012"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R013"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R014"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R015"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R016"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R100"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R101"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R102"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R103"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R104"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R105"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R106"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R107"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R108"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R109"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R110"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R111"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R112"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R113"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R114"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R115"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R116"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R200"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R201"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R202"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R203"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R204"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R205"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R206"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R207"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R208"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R209"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R210"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R211"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R212"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R213"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R214"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R215"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R216"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R300"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R301"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R302"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R303"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R304"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R305"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R306"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R307"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R308"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R309"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R310"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R311"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R312"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R313"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R314"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R315"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_16qam:QAM|coeff_rom:R316"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (276014): Found 68 instances of uninferred RAM logic
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R016|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R116|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R216|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R316|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R015|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R115|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R215|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R315|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R014|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R114|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R214|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R314|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R013|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R113|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R213|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R313|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R012|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R112|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R212|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R312|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R011|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R111|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R211|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R311|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R010|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R110|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R210|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R310|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R009|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R109|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R209|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R309|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R008|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R108|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R208|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R308|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R007|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R107|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R207|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R307|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R006|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R106|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R206|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R306|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R005|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R105|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R205|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R305|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R004|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R104|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R204|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R304|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R003|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R103|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R203|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R303|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R002|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R102|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R202|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R302|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R001|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R101|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R201|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R301|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R000|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R100|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R200|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_16qam:QAM|coeff_rom:R300|coeff_rom" is uninferred due to inappropriate RAM size
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DA_MODE" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/output_files/Transmitter_Ver_2.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 683 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 664 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 208 warnings
+    Info: Peak virtual memory: 4603 megabytes
+    Info: Processing ended: Tue Dec 17 00:34:41 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:04
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/output_files/Transmitter_Ver_2.map.smsg.
+
+

@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at pn_gen.v(13): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at filter_qpsk.v(10): object "m" differs only in case from object "M" in the same scope

@@ -1,0 +1,134 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Transmitter_Ver_2_run_msim_gate_verilog.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+. {Transmitter_Ver_2_7_1200mv_85c_slow.vo}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module transmit_16qam
+# 
+# Top level modules:
+# 	transmit_16qam
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tb_transmit_16qam.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_transmit_16qam
+# 
+# Top level modules:
+# 	tb_transmit_16qam
+# 
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L altera_ver -L cycloneive_ver -L gate_work -L work -voptargs="+acc"  tb_transmit_16qam
+# vsim +transport_int_delays +transport_path_delays -L altera_ver -L cycloneive_ver -L gate_work -L work -voptargs=\"+acc\" -t 1ps tb_transmit_16qam 
+# Loading work.tb_transmit_16qam
+# Loading work.transmit_16qam
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# SDF 10.1d Compiler 2012.11 Nov  2 2012
+# 
+# Loading instances from Transmitter_Ver_2_7_1200mv_85c_v_slow.sdo
+# Loading altera_ver.PRIM_GDFF_LOW
+# Loading timing data from Transmitter_Ver_2_7_1200mv_85c_v_slow.sdo
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_transmit_16qam File: C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tb_transmit_16qam.v
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33079 ps, d:33084 ps, 186 ps );
+#    Time: 33084 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|sum[0] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33079 ps, d:33116 ps, 186 ps );
+#    Time: 33116 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[4] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33079 ps, d:33120 ps, 186 ps );
+#    Time: 33120 ps  Iteration: 1  Instance: /tb_transmit_16qam/T/\QAM|dac_out[7] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33079 ps, d:33222 ps, 186 ps );
+#    Time: 33222 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[2] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33079 ps, d:33247 ps, 186 ps );
+#    Time: 33247 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:3713079 ps, d:3713104 ps, 186 ps );
+#    Time: 3713104 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:5953079 ps, d:5953085 ps, 186 ps );
+#    Time: 5953085 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[6] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:5953079 ps, d:5953151 ps, 186 ps );
+#    Time: 5953151 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[7] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:5953079 ps, d:5953210 ps, 186 ps );
+#    Time: 5953210 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:7073079 ps, d:7073091 ps, 186 ps );
+#    Time: 7073091 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:7073079 ps, d:7073144 ps, 186 ps );
+#    Time: 7073144 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[6] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:7073079 ps, d:7073210 ps, 186 ps );
+#    Time: 7073210 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[7] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:7073511 ps, d:7073644 ps, 186 ps );
+#    Time: 7073644 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[9] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:13953079 ps, d:13953124 ps, 186 ps );
+#    Time: 13953124 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[6] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:16673079 ps, d:16673089 ps, 186 ps );
+#    Time: 16673089 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:16673511 ps, d:16673565 ps, 186 ps );
+#    Time: 16673565 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[9] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:16673511 ps, d:16673624 ps, 186 ps );
+#    Time: 16673624 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[10] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:17473079 ps, d:17473147 ps, 186 ps );
+#    Time: 17473147 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:17473079 ps, d:17473210 ps, 186 ps );
+#    Time: 17473210 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[7] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:17793511 ps, d:17793609 ps, 186 ps );
+#    Time: 17793609 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[9] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:17793511 ps, d:17793675 ps, 186 ps );
+#    Time: 17793675 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[10] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:18113079 ps, d:18113121 ps, 186 ps );
+#    Time: 18113121 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[6] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:18113079 ps, d:18113194 ps, 186 ps );
+#    Time: 18113194 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[7] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:20193079 ps, d:20193083 ps, 186 ps );
+#    Time: 20193083 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:24193079 ps, d:24193259 ps, 186 ps );
+#    Time: 24193259 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[7] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:24353079 ps, d:24353100 ps, 186 ps );
+#    Time: 24353100 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:28353079 ps, d:28353129 ps, 186 ps );
+#    Time: 28353129 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[6] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:28353079 ps, d:28353195 ps, 186 ps );
+#    Time: 28353195 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[7] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:28353079 ps, d:28353261 ps, 186 ps );
+#    Time: 28353261 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:30113079 ps, d:30113089 ps, 186 ps );
+#    Time: 30113089 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:31553079 ps, d:31553108 ps, 186 ps );
+#    Time: 31553108 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[5] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:31553079 ps, d:31553181 ps, 186 ps );
+#    Time: 31553181 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[6] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33153511 ps, d:33153537 ps, 186 ps );
+#    Time: 33153537 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[11] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33153511 ps, d:33153685 ps, 186 ps );
+#    Time: 33153685 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[12] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33793511 ps, d:33793626 ps, 186 ps );
+#    Time: 33793626 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[10] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:33793511 ps, d:33793673 ps, 186 ps );
+#    Time: 33793673 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[11] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:35233079 ps, d:35233188 ps, 186 ps );
+#    Time: 35233188 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:35233511 ps, d:35233581 ps, 186 ps );
+#    Time: 35233581 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[11] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:35873079 ps, d:35873185 ps, 186 ps );
+#    Time: 35873185 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[7] 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/../altera/verilog/src/altera_primitives.v(289): $hold( posedge clk &&& nosloadsclr:38113079 ps, d:38113257 ps, 186 ps );
+#    Time: 38113257 ps  Iteration: 0  Instance: /tb_transmit_16qam/T/\QAM|dac_out[8] 
+# Break in Module tb_transmit_16qam at C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tb_transmit_16qam.v line 27
+# Simulation Breakpoint: Break in Module tb_transmit_16qam at C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tb_transmit_16qam.v line 27
+# MACRO ./Transmitter_Ver_2_run_msim_gate_verilog.do PAUSED at line 17

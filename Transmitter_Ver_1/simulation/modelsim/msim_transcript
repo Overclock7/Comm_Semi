@@ -1,0 +1,103 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Transmitter_Ver_1_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/tdl.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tdl
+# 
+# Top level modules:
+# 	tdl
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/pn_gen.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pn_gen
+# 
+# Top level modules:
+# 	pn_gen
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/mux_2to1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux_2to1
+# 
+# Top level modules:
+# 	mux_2to1
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module filter_qpsk
+# 
+# Top level modules:
+# 	filter_qpsk
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/d_filp_flop.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module d_filp_flop
+# 
+# Top level modules:
+# 	d_filp_flop
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/coeff_rom.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module coeff_rom
+# 
+# Top level modules:
+# 	coeff_rom
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/clock_generator.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module clock_generator
+# 
+# Top level modules:
+# 	clock_generator
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1 {C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/tb_filter_qpsk.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module tb_filter_qpsk
+# 
+# Top level modules:
+# 	tb_filter_qpsk
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  tb_filter_qpsk
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_filter_qpsk 
+# Loading work.tb_filter_qpsk
+# Loading work.filter_qpsk
+# Loading work.clock_generator
+# Loading work.d_filp_flop
+# Loading work.pn_gen
+# Loading work.tdl
+# Loading work.mux_2to1
+# Loading work.coeff_rom
+# ** Warning: (vsim-3017) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(30): [TFMPC] - Too few port connections. Expected 6, found 4.
+# 
+#         Region: /tb_filter_qpsk/F/C
+# ** Warning: (vsim-3722) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(30): [TFMPC] - Missing connection for port 'clock_mod2'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(30): [TFMPC] - Missing connection for port 'clock_mod4'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(33): [TFMPC] - Too few port connections. Expected 5, found 3.
+# 
+#         Region: /tb_filter_qpsk/F/S0
+# ** Warning: (vsim-3722) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(33): [TFMPC] - Missing connection for port 'pn_roll'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(33): [TFMPC] - Missing connection for port 'state'.
+# 
+# ** Warning: (vsim-3017) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(34): [TFMPC] - Too few port connections. Expected 5, found 3.
+# 
+#         Region: /tb_filter_qpsk/F/S1
+# ** Warning: (vsim-3722) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(34): [TFMPC] - Missing connection for port 'pn_roll'.
+# 
+# ** Warning: (vsim-3722) C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v(34): [TFMPC] - Missing connection for port 'state'.
+# 
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module tb_filter_qpsk at C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/tb_filter_qpsk.v line 27
+# Simulation Breakpoint: Break in Module tb_filter_qpsk at C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/tb_filter_qpsk.v line 27
+# MACRO ./Transmitter_Ver_1_run_msim_rtl_verilog.do PAUSED at line 23

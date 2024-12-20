@@ -1,0 +1,132 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# Date created = 20:28:28  December 03, 2024
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Transmitter_Ver_2_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY transmit_16qam
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:28:28  DECEMBER 03, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_Y2 -to CLOCK_50
+set_location_assignment PIN_K22 -to DAC_OUT[13]
+set_location_assignment PIN_K21 -to DAC_OUT[12]
+set_location_assignment PIN_M28 -to DAC_OUT[11]
+set_location_assignment PIN_M27 -to DAC_OUT[10]
+set_location_assignment PIN_K28 -to DAC_OUT[9]
+set_location_assignment PIN_K27 -to DAC_OUT[8]
+set_location_assignment PIN_G28 -to DAC_OUT[7]
+set_location_assignment PIN_G27 -to DAC_OUT[6]
+set_location_assignment PIN_F28 -to DAC_OUT[5]
+set_location_assignment PIN_F27 -to DAC_OUT[4]
+set_location_assignment PIN_E28 -to DAC_OUT[3]
+set_location_assignment PIN_E27 -to DAC_OUT[2]
+set_location_assignment PIN_D28 -to DAC_OUT[1]
+set_location_assignment PIN_D27 -to DAC_OUT[0]
+set_location_assignment PIN_H24 -to DA_MODE
+set_location_assignment PIN_H23 -to DA_WRTA
+set_location_assignment PIN_G24 -to PLL_OUT_DA
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_transmit_16qam -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_transmit_qpsk -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_transmit_qpsk
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_transmit_qpsk -section_id tb_transmit_qpsk
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_transmit_16qam -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_transmit_16qam
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_transmit_16qam -section_id tb_transmit_16qam
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_tdl -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_tdl
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_tdl -section_id tb_tdl
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_pn_gen -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_pn_gen
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_pn_gen -section_id tb_pn_gen
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_clock_generator_2 -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_clock_generator_2
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_clock_generator_2 -section_id tb_clock_generator_2
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_clock_generator -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_clock_generator
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME tb_clock_generator -section_id tb_clock_generator
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name VERILOG_FILE transmit_16qam.v
+set_global_assignment -name VERILOG_FILE transmit_qpsk.v
+set_global_assignment -name VERILOG_FILE tdl.v
+set_global_assignment -name VERILOG_FILE tb_transmit_qpsk.v
+set_global_assignment -name VERILOG_FILE tb_transmit_16qam.v
+set_global_assignment -name VERILOG_FILE tb_tdl.v
+set_global_assignment -name VERILOG_FILE tb_pn_gen.v
+set_global_assignment -name VERILOG_FILE tb_clock_generator_2.v
+set_global_assignment -name VERILOG_FILE tb_clock_generator.v
+set_global_assignment -name VERILOG_FILE register.v
+set_global_assignment -name VERILOG_FILE pn_gen_test.v
+set_global_assignment -name VERILOG_FILE pn_gen.v
+set_global_assignment -name VERILOG_FILE mux_4to2.v
+set_global_assignment -name VERILOG_FILE mux_2to1.v
+set_global_assignment -name VERILOG_FILE filter_qpsk.v
+set_global_assignment -name VERILOG_FILE filter_16qam.v
+set_global_assignment -name VERILOG_FILE d_filp_flop.v
+set_global_assignment -name VERILOG_FILE coeff_rom.v
+set_global_assignment -name VERILOG_FILE clock_generator_2.v
+set_global_assignment -name VERILOG_FILE clock_generator.v
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS16
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE BALANCED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AB28 -to RESET
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_transmit_qpsk.v -section_id tb_transmit_qpsk
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_transmit_16qam.v -section_id tb_transmit_16qam
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_tdl.v -section_id tb_tdl
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_pn_gen.v -section_id tb_pn_gen
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_clock_generator_2.v -section_id tb_clock_generator_2
+set_global_assignment -name EDA_TEST_BENCH_FILE tb_clock_generator.v -section_id tb_clock_generator
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

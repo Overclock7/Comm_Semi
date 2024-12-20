@@ -1,0 +1,24 @@
+-- begin_signature
+-- coeff_rom(FILE_NAME
+-- "C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/simulation/coeff_P3_8.txt"
+-- BIT_WIDTH
+-- 14
+-- MEMORY_DEPTH
+-- 8)
+-- end_signature
+WIDTH=14;
+DEPTH=8;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	7 :	11110110100111;
+	6 :	11011111101101;
+	5 :	00111010000111;
+	4 :	01010100011011;
+	3 :	10010011011010;
+	2 :	01111111111101;
+	1 :	10001100101011;
+	0 :	10010001000011;
+END;

@@ -1,0 +1,918 @@
+Analysis & Synthesis report for Transmitter_Ver_1
+Thu Dec 12 22:21:06 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |transmit_qpsk
+ 12. Parameter Settings for User Entity Instance: filter_qpsk:QPSK
+ 13. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|clock_generator:C
+ 14. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|pn_gen:S0
+ 15. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|pn_gen:S1
+ 16. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|tdl:I
+ 17. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|tdl:Q
+ 18. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|mux_2to1:M
+ 19. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R00
+ 20. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R01
+ 21. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R02
+ 22. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R03
+ 23. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R04
+ 24. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R05
+ 25. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R06
+ 26. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R07
+ 27. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R08
+ 28. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R09
+ 29. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R10
+ 30. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R11
+ 31. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R12
+ 32. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R13
+ 33. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R14
+ 34. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R15
+ 35. Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R16
+ 36. Port Connectivity Checks: "filter_qpsk:QPSK|pn_gen:S1"
+ 37. Port Connectivity Checks: "filter_qpsk:QPSK|pn_gen:S0"
+ 38. Port Connectivity Checks: "filter_qpsk:QPSK|clock_generator:C"
+ 39. Port Connectivity Checks: "filter_qpsk:QPSK"
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Dec 12 22:21:06 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Transmitter_Ver_1                               ;
+; Top-level Entity Name              ; transmit_qpsk                                   ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 500                                             ;
+;     Total combinational functions  ; 458                                             ;
+;     Dedicated logic registers      ; 225                                             ;
+; Total registers                    ; 225                                             ;
+; Total pins                         ; 19                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; transmit_qpsk      ; Transmitter_Ver_1  ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+; transmit_qpsk.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/transmit_qpsk.v   ;         ;
+; tdl.v                            ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/tdl.v             ;         ;
+; pn_gen.v                         ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/pn_gen.v          ;         ;
+; mux_2to1.v                       ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/mux_2to1.v        ;         ;
+; filter_qpsk.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/filter_qpsk.v     ;         ;
+; d_filp_flop.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/d_filp_flop.v     ;         ;
+; coeff_rom.v                      ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/coeff_rom.v       ;         ;
+; clock_generator.v                ; yes             ; User Verilog HDL File  ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/clock_generator.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 500         ;
+;                                             ;             ;
+; Total combinational functions               ; 458         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 20          ;
+;     -- 3 input functions                    ; 387         ;
+;     -- <=2 input functions                  ; 51          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 147         ;
+;     -- arithmetic mode                      ; 311         ;
+;                                             ;             ;
+; Total registers                             ; 225         ;
+;     -- Dedicated logic registers            ; 225         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 19          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; SW[0]~input ;
+; Maximum fan-out                             ; 225         ;
+; Total fan-out                               ; 2046        ;
+; Average fan-out                             ; 2.84        ;
++---------------------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                      ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+; |transmit_qpsk             ; 458 (0)           ; 225 (0)      ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |transmit_qpsk                                                   ; work         ;
+;    |filter_qpsk:QPSK|      ; 458 (364)         ; 225 (175)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK                                  ; work         ;
+;       |clock_generator:C|  ; 3 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|clock_generator:C                ; work         ;
+;          |d_filp_flop:D0|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0 ; work         ;
+;          |d_filp_flop:D1|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1 ; work         ;
+;          |d_filp_flop:D2|  ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2 ; work         ;
+;       |coeff_rom:R02|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R02                    ; work         ;
+;       |coeff_rom:R03|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R03                    ; work         ;
+;       |coeff_rom:R04|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R04                    ; work         ;
+;       |coeff_rom:R05|      ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R05                    ; work         ;
+;       |coeff_rom:R06|      ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R06                    ; work         ;
+;       |coeff_rom:R07|      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R07                    ; work         ;
+;       |coeff_rom:R08|      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R08                    ; work         ;
+;       |coeff_rom:R09|      ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R09                    ; work         ;
+;       |coeff_rom:R10|      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R10                    ; work         ;
+;       |coeff_rom:R11|      ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R11                    ; work         ;
+;       |coeff_rom:R12|      ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R12                    ; work         ;
+;       |coeff_rom:R13|      ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R13                    ; work         ;
+;       |coeff_rom:R14|      ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R14                    ; work         ;
+;       |coeff_rom:R15|      ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R15                    ; work         ;
+;       |coeff_rom:R16|      ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R16                    ; work         ;
+;       |mux_2to1:M|         ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|mux_2to1:M                       ; work         ;
+;       |pn_gen:S0|          ; 1 (1)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|pn_gen:S0                        ; work         ;
+;       |pn_gen:S1|          ; 2 (2)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|pn_gen:S1                        ; work         ;
+;       |tdl:I|              ; 1 (1)             ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|tdl:I                            ; work         ;
+;       |tdl:Q|              ; 1 (1)             ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |transmit_qpsk|filter_qpsk:QPSK|tdl:Q                            ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++-----------------------------------------+--------------------------------------------------+
+; Register name                           ; Reason for Removal                               ;
++-----------------------------------------+--------------------------------------------------+
+; filter_qpsk:QPSK|pn_gen:S0|state[1]     ; Merged with filter_qpsk:QPSK|tdl:I|out[0]        ;
+; filter_qpsk:QPSK|pn_gen:S0|state[2]     ; Merged with filter_qpsk:QPSK|tdl:I|out[1]        ;
+; filter_qpsk:QPSK|tdl:I|out[2]           ; Merged with filter_qpsk:QPSK|pn_gen:S0|state[3]  ;
+; filter_qpsk:QPSK|pn_gen:S0|state[4]     ; Merged with filter_qpsk:QPSK|tdl:I|out[3]        ;
+; filter_qpsk:QPSK|tdl:I|out[4]           ; Merged with filter_qpsk:QPSK|pn_gen:S0|state[5]  ;
+; filter_qpsk:QPSK|pn_gen:S0|state[6]     ; Merged with filter_qpsk:QPSK|tdl:I|out[5]        ;
+; filter_qpsk:QPSK|tdl:I|out[6]           ; Merged with filter_qpsk:QPSK|pn_gen:S0|state[7]  ;
+; filter_qpsk:QPSK|pn_gen:S0|state[8]     ; Merged with filter_qpsk:QPSK|tdl:I|out[7]        ;
+; filter_qpsk:QPSK|tdl:I|out[8]           ; Merged with filter_qpsk:QPSK|pn_gen:S0|state[9]  ;
+; filter_qpsk:QPSK|pn_gen:S0|state[10]    ; Merged with filter_qpsk:QPSK|tdl:I|out[9]        ;
+; filter_qpsk:QPSK|tdl:I|out[10]          ; Merged with filter_qpsk:QPSK|pn_gen:S0|state[11] ;
+; filter_qpsk:QPSK|product[16][11]        ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][12]        ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][13]        ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][1]         ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][2]         ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][4]         ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][5]         ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][6]         ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][7]         ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][8]         ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[16][9]         ; Merged with filter_qpsk:QPSK|product[16][10]     ;
+; filter_qpsk:QPSK|product[15][11]        ; Merged with filter_qpsk:QPSK|product[15][10]     ;
+; filter_qpsk:QPSK|product[15][12]        ; Merged with filter_qpsk:QPSK|product[15][10]     ;
+; filter_qpsk:QPSK|product[15][13]        ; Merged with filter_qpsk:QPSK|product[15][10]     ;
+; filter_qpsk:QPSK|product[15][5]         ; Merged with filter_qpsk:QPSK|product[15][10]     ;
+; filter_qpsk:QPSK|product[15][6]         ; Merged with filter_qpsk:QPSK|product[15][10]     ;
+; filter_qpsk:QPSK|product[15][7]         ; Merged with filter_qpsk:QPSK|product[15][10]     ;
+; filter_qpsk:QPSK|product[15][8]         ; Merged with filter_qpsk:QPSK|product[15][10]     ;
+; filter_qpsk:QPSK|product[15][9]         ; Merged with filter_qpsk:QPSK|product[15][10]     ;
+; filter_qpsk:QPSK|product[14][11]        ; Merged with filter_qpsk:QPSK|product[14][10]     ;
+; filter_qpsk:QPSK|product[14][12]        ; Merged with filter_qpsk:QPSK|product[14][10]     ;
+; filter_qpsk:QPSK|product[14][13]        ; Merged with filter_qpsk:QPSK|product[14][10]     ;
+; filter_qpsk:QPSK|product[14][6]         ; Merged with filter_qpsk:QPSK|product[14][10]     ;
+; filter_qpsk:QPSK|product[14][7]         ; Merged with filter_qpsk:QPSK|product[14][10]     ;
+; filter_qpsk:QPSK|product[14][8]         ; Merged with filter_qpsk:QPSK|product[14][10]     ;
+; filter_qpsk:QPSK|product[14][9]         ; Merged with filter_qpsk:QPSK|product[14][10]     ;
+; filter_qpsk:QPSK|product[13][11]        ; Merged with filter_qpsk:QPSK|product[13][10]     ;
+; filter_qpsk:QPSK|product[13][12]        ; Merged with filter_qpsk:QPSK|product[13][10]     ;
+; filter_qpsk:QPSK|product[13][13]        ; Merged with filter_qpsk:QPSK|product[13][10]     ;
+; filter_qpsk:QPSK|product[13][6]         ; Merged with filter_qpsk:QPSK|product[13][10]     ;
+; filter_qpsk:QPSK|product[13][7]         ; Merged with filter_qpsk:QPSK|product[13][10]     ;
+; filter_qpsk:QPSK|product[13][8]         ; Merged with filter_qpsk:QPSK|product[13][10]     ;
+; filter_qpsk:QPSK|product[13][9]         ; Merged with filter_qpsk:QPSK|product[13][10]     ;
+; filter_qpsk:QPSK|product[12][11]        ; Merged with filter_qpsk:QPSK|product[12][10]     ;
+; filter_qpsk:QPSK|product[12][12]        ; Merged with filter_qpsk:QPSK|product[12][10]     ;
+; filter_qpsk:QPSK|product[12][13]        ; Merged with filter_qpsk:QPSK|product[12][10]     ;
+; filter_qpsk:QPSK|product[12][7]         ; Merged with filter_qpsk:QPSK|product[12][10]     ;
+; filter_qpsk:QPSK|product[12][8]         ; Merged with filter_qpsk:QPSK|product[12][10]     ;
+; filter_qpsk:QPSK|product[12][9]         ; Merged with filter_qpsk:QPSK|product[12][10]     ;
+; filter_qpsk:QPSK|product[11][11]        ; Merged with filter_qpsk:QPSK|product[11][10]     ;
+; filter_qpsk:QPSK|product[11][12]        ; Merged with filter_qpsk:QPSK|product[11][10]     ;
+; filter_qpsk:QPSK|product[11][13]        ; Merged with filter_qpsk:QPSK|product[11][10]     ;
+; filter_qpsk:QPSK|product[11][8]         ; Merged with filter_qpsk:QPSK|product[11][10]     ;
+; filter_qpsk:QPSK|product[11][9]         ; Merged with filter_qpsk:QPSK|product[11][10]     ;
+; filter_qpsk:QPSK|product[10][11]        ; Merged with filter_qpsk:QPSK|product[10][10]     ;
+; filter_qpsk:QPSK|product[10][12]        ; Merged with filter_qpsk:QPSK|product[10][10]     ;
+; filter_qpsk:QPSK|product[10][13]        ; Merged with filter_qpsk:QPSK|product[10][10]     ;
+; filter_qpsk:QPSK|product[10][9]         ; Merged with filter_qpsk:QPSK|product[10][10]     ;
+; filter_qpsk:QPSK|product[9][12]         ; Merged with filter_qpsk:QPSK|product[9][11]      ;
+; filter_qpsk:QPSK|product[9][13]         ; Merged with filter_qpsk:QPSK|product[9][11]      ;
+; filter_qpsk:QPSK|product[6][12]         ; Merged with filter_qpsk:QPSK|product[6][11]      ;
+; filter_qpsk:QPSK|product[6][13]         ; Merged with filter_qpsk:QPSK|product[6][11]      ;
+; filter_qpsk:QPSK|product[5][11]         ; Merged with filter_qpsk:QPSK|product[5][10]      ;
+; filter_qpsk:QPSK|product[5][12]         ; Merged with filter_qpsk:QPSK|product[5][10]      ;
+; filter_qpsk:QPSK|product[5][13]         ; Merged with filter_qpsk:QPSK|product[5][10]      ;
+; filter_qpsk:QPSK|product[5][9]          ; Merged with filter_qpsk:QPSK|product[5][10]      ;
+; filter_qpsk:QPSK|product[4][11]         ; Merged with filter_qpsk:QPSK|product[4][10]      ;
+; filter_qpsk:QPSK|product[4][12]         ; Merged with filter_qpsk:QPSK|product[4][10]      ;
+; filter_qpsk:QPSK|product[4][13]         ; Merged with filter_qpsk:QPSK|product[4][10]      ;
+; filter_qpsk:QPSK|product[4][7]          ; Merged with filter_qpsk:QPSK|product[4][10]      ;
+; filter_qpsk:QPSK|product[4][8]          ; Merged with filter_qpsk:QPSK|product[4][10]      ;
+; filter_qpsk:QPSK|product[4][9]          ; Merged with filter_qpsk:QPSK|product[4][10]      ;
+; filter_qpsk:QPSK|product[3][11]         ; Merged with filter_qpsk:QPSK|product[3][10]      ;
+; filter_qpsk:QPSK|product[3][12]         ; Merged with filter_qpsk:QPSK|product[3][10]      ;
+; filter_qpsk:QPSK|product[3][13]         ; Merged with filter_qpsk:QPSK|product[3][10]      ;
+; filter_qpsk:QPSK|product[3][7]          ; Merged with filter_qpsk:QPSK|product[3][10]      ;
+; filter_qpsk:QPSK|product[3][8]          ; Merged with filter_qpsk:QPSK|product[3][10]      ;
+; filter_qpsk:QPSK|product[3][9]          ; Merged with filter_qpsk:QPSK|product[3][10]      ;
+; filter_qpsk:QPSK|product[2][11]         ; Merged with filter_qpsk:QPSK|product[2][10]      ;
+; filter_qpsk:QPSK|product[2][12]         ; Merged with filter_qpsk:QPSK|product[2][10]      ;
+; filter_qpsk:QPSK|product[2][13]         ; Merged with filter_qpsk:QPSK|product[2][10]      ;
+; filter_qpsk:QPSK|product[2][6]          ; Merged with filter_qpsk:QPSK|product[2][10]      ;
+; filter_qpsk:QPSK|product[2][7]          ; Merged with filter_qpsk:QPSK|product[2][10]      ;
+; filter_qpsk:QPSK|product[2][8]          ; Merged with filter_qpsk:QPSK|product[2][10]      ;
+; filter_qpsk:QPSK|product[2][9]          ; Merged with filter_qpsk:QPSK|product[2][10]      ;
+; filter_qpsk:QPSK|product[1][11]         ; Merged with filter_qpsk:QPSK|product[1][10]      ;
+; filter_qpsk:QPSK|product[1][12]         ; Merged with filter_qpsk:QPSK|product[1][10]      ;
+; filter_qpsk:QPSK|product[1][13]         ; Merged with filter_qpsk:QPSK|product[1][10]      ;
+; filter_qpsk:QPSK|product[1][5]          ; Merged with filter_qpsk:QPSK|product[1][10]      ;
+; filter_qpsk:QPSK|product[1][6]          ; Merged with filter_qpsk:QPSK|product[1][10]      ;
+; filter_qpsk:QPSK|product[1][7]          ; Merged with filter_qpsk:QPSK|product[1][10]      ;
+; filter_qpsk:QPSK|product[1][8]          ; Merged with filter_qpsk:QPSK|product[1][10]      ;
+; filter_qpsk:QPSK|product[1][9]          ; Merged with filter_qpsk:QPSK|product[1][10]      ;
+; filter_qpsk:QPSK|product[0][11]         ; Merged with filter_qpsk:QPSK|product[0][10]      ;
+; filter_qpsk:QPSK|product[0][12]         ; Merged with filter_qpsk:QPSK|product[0][10]      ;
+; filter_qpsk:QPSK|product[0][13]         ; Merged with filter_qpsk:QPSK|product[0][10]      ;
+; filter_qpsk:QPSK|product[0][5]          ; Merged with filter_qpsk:QPSK|product[0][10]      ;
+; filter_qpsk:QPSK|product[0][6]          ; Merged with filter_qpsk:QPSK|product[0][10]      ;
+; filter_qpsk:QPSK|product[0][7]          ; Merged with filter_qpsk:QPSK|product[0][10]      ;
+; filter_qpsk:QPSK|product[0][8]          ; Merged with filter_qpsk:QPSK|product[0][10]      ;
+; filter_qpsk:QPSK|product[0][9]          ; Merged with filter_qpsk:QPSK|product[0][10]      ;
+; Total Number of Removed Registers = 102 ;                                                  ;
++-----------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 225   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 225   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; filter_qpsk:QPSK|pn_gen:S0|pn_out      ; 1       ;
+; filter_qpsk:QPSK|pn_gen:S1|pn_out      ; 2       ;
+; filter_qpsk:QPSK|pn_gen:S1|state[1]    ; 1       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |transmit_qpsk ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; BIT_DAC        ; 14    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; SPS            ; 8     ; Signed Integer                       ;
+; SPAN           ; 16    ; Signed Integer                       ;
+; BIT_DAC        ; 14    ; Signed Integer                       ;
+; BIT_WIDTH      ; 14    ; Signed Integer                       ;
+; BIT_RE         ; 1     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|clock_generator:C ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; MOD            ; 8     ; Signed Integer                                         ;
+; BITS           ; 3     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|pn_gen:S0 ;
++----------------+---------------+----------------------------------------+
+; Parameter Name ; Value         ; Type                                   ;
++----------------+---------------+----------------------------------------+
+; SEED           ; 000000000001  ; Unsigned Binary                        ;
+; GEN_POLY       ; 1000011010001 ; Unsigned Binary                        ;
++----------------+---------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|pn_gen:S1 ;
++----------------+---------------+----------------------------------------+
+; Parameter Name ; Value         ; Type                                   ;
++----------------+---------------+----------------------------------------+
+; SEED           ; 000000000011  ; Unsigned Binary                        ;
+; GEN_POLY       ; 1000011010001 ; Unsigned Binary                        ;
++----------------+---------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|tdl:I ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; SPAN           ; 16    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|tdl:Q ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; SPAN           ; 16    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|mux_2to1:M ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; SPAN           ; 16    ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R00                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_0.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R01                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_1.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R02                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_2.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R03                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_3.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R04                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_4.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R05                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_5.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R06                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_6.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R07                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_7.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R08                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_8.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R09                                                                ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                    ; Type           ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_9.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                       ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                        ; Signed Integer ;
++----------------+----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R10                                                                 ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                     ; Type           ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_10.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                        ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                         ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R11                                                                 ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                     ; Type           ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_11.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                        ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                         ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R12                                                                 ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                     ; Type           ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_12.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                        ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                         ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R13                                                                 ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                     ; Type           ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_13.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                        ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                         ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R14                                                                 ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                     ; Type           ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_14.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                        ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                         ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R15                                                                 ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                     ; Type           ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_15.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                        ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                         ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: filter_qpsk:QPSK|coeff_rom:R16                                                                 ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                                                                     ; Type           ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+; FILE_NAME      ; C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/simulation/coeff_roll_off_0_35_length_14bit_16.txt ; String         ;
+; BIT_WIDTH      ; 14                                                                                                        ; Signed Integer ;
+; MEMORY_DEPTH   ; 8                                                                                                         ; Signed Integer ;
++----------------+-----------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "filter_qpsk:QPSK|pn_gen:S1"                                                                                 ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; pn_roll ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; state   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "filter_qpsk:QPSK|pn_gen:S0"                                                                                 ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                  ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; pn_roll ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; state   ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "filter_qpsk:QPSK|clock_generator:C"                                                                            ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; clock_mod2 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; clock_mod4 ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "filter_qpsk:QPSK"                                                                                            ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; base_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Dec 12 22:21:03 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Transmitter_Ver_1 -c Transmitter_Ver_1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file transmit_qpsk.v
+    Info (12023): Found entity 1: transmit_qpsk
+Info (12021): Found 1 design units, including 1 entities, in source file transmit_16qam.v
+    Info (12023): Found entity 1: transmit_16qam
+Info (12021): Found 1 design units, including 1 entities, in source file tdl.v
+    Info (12023): Found entity 1: tdl
+Info (12021): Found 1 design units, including 1 entities, in source file tb_transmit_qpsk.v
+    Info (12023): Found entity 1: tb_transmit_qpsk
+Info (12021): Found 1 design units, including 1 entities, in source file tb_transmit_16qam.v
+    Info (12023): Found entity 1: tb_transmit_16qam
+Info (12021): Found 1 design units, including 1 entities, in source file tb_tdl.v
+    Info (12023): Found entity 1: tb_tdl
+Info (12021): Found 1 design units, including 1 entities, in source file tb_pn_gen.v
+    Info (12023): Found entity 1: tb_pn_gen
+Info (12021): Found 1 design units, including 1 entities, in source file tb_filter_qpsk.v
+    Info (12023): Found entity 1: tb_filter_qpsk
+Info (12021): Found 1 design units, including 1 entities, in source file tb_filter_16qam.v
+    Info (12023): Found entity 1: tb_filter_16qam
+Info (12021): Found 1 design units, including 1 entities, in source file tb_clock_generator.v
+    Info (12023): Found entity 1: tb_clock_generator
+Info (12021): Found 1 design units, including 1 entities, in source file pn_gen_test.v
+    Info (12023): Found entity 1: pn_gen_test
+Info (12021): Found 1 design units, including 1 entities, in source file pn_gen.v
+    Info (12023): Found entity 1: pn_gen
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4to2.v
+    Info (12023): Found entity 1: mux_4to2
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2to1.v
+    Info (12023): Found entity 1: mux_2to1
+Info (12021): Found 1 design units, including 1 entities, in source file filter_qpsk.v
+    Info (12023): Found entity 1: filter_qpsk
+Info (12021): Found 1 design units, including 1 entities, in source file filter_16qam.v
+    Info (12023): Found entity 1: filter_16qam
+Info (12021): Found 1 design units, including 1 entities, in source file d_filp_flop.v
+    Info (12023): Found entity 1: d_filp_flop
+Info (12021): Found 1 design units, including 1 entities, in source file coeff_rom.v
+    Info (12023): Found entity 1: coeff_rom
+Info (12021): Found 1 design units, including 1 entities, in source file clock_generator.v
+    Info (12023): Found entity 1: clock_generator
+Info (12127): Elaborating entity "transmit_qpsk" for the top level hierarchy
+Info (12128): Elaborating entity "filter_qpsk" for hierarchy "filter_qpsk:QPSK"
+Warning (10230): Verilog HDL assignment warning at filter_qpsk.v(92): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at filter_qpsk.v(93): truncated value with size 32 to match size of target (14)
+Warning (10230): Verilog HDL assignment warning at filter_qpsk.v(111): truncated value with size 32 to match size of target (14)
+Info (12128): Elaborating entity "clock_generator" for hierarchy "filter_qpsk:QPSK|clock_generator:C"
+Info (12128): Elaborating entity "d_filp_flop" for hierarchy "filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0"
+Info (12128): Elaborating entity "pn_gen" for hierarchy "filter_qpsk:QPSK|pn_gen:S0"
+Info (12128): Elaborating entity "pn_gen" for hierarchy "filter_qpsk:QPSK|pn_gen:S1"
+Info (12128): Elaborating entity "tdl" for hierarchy "filter_qpsk:QPSK|tdl:I"
+Info (12128): Elaborating entity "mux_2to1" for hierarchy "filter_qpsk:QPSK|mux_2to1:M"
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R00"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R01"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R02"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R03"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R04"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R05"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R06"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R07"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R08"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R09"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R10"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R11"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R12"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R13"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R14"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R15"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "coeff_rom" for hierarchy "filter_qpsk:QPSK|coeff_rom:R16"
+Warning (10030): Net "coeff_rom.data_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.waddr_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "coeff_rom.we_a" at coeff_rom.v(10) has no driver or initial value, using a default initial value '0'
+Info (276014): Found 17 instances of uninferred RAM logic
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R16|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R15|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R14|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R13|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R12|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R11|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R10|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R09|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R08|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R07|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R06|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R05|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R04|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R03|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R02|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R01|coeff_rom" is uninferred due to inappropriate RAM size
+    Info (276004): RAM logic "filter_qpsk:QPSK|coeff_rom:R00|coeff_rom" is uninferred due to inappropriate RAM size
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "DA_MODE" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/output_files/Transmitter_Ver_1.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 520 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 501 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 4595 megabytes
+    Info: Processing ended: Thu Dec 12 22:21:06 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_1/output_files/Transmitter_Ver_1.map.smsg.
+
+

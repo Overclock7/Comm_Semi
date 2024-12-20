@@ -1,0 +1,694 @@
+|transmit_qpsk
+CLOCK_50 => CLOCK_50.IN1
+SW[0] => SW[0].IN1
+PLL_OUT_DA <= CLOCK_50.DB_MAX_OUTPUT_PORT_TYPE
+DA_MODE <= <VCC>
+DA_WRTA <= CLOCK_50.DB_MAX_OUTPUT_PORT_TYPE
+DAC_OUT[0] <= filter_qpsk:QPSK.if_out
+DAC_OUT[1] <= filter_qpsk:QPSK.if_out
+DAC_OUT[2] <= filter_qpsk:QPSK.if_out
+DAC_OUT[3] <= filter_qpsk:QPSK.if_out
+DAC_OUT[4] <= filter_qpsk:QPSK.if_out
+DAC_OUT[5] <= filter_qpsk:QPSK.if_out
+DAC_OUT[6] <= filter_qpsk:QPSK.if_out
+DAC_OUT[7] <= filter_qpsk:QPSK.if_out
+DAC_OUT[8] <= filter_qpsk:QPSK.if_out
+DAC_OUT[9] <= filter_qpsk:QPSK.if_out
+DAC_OUT[10] <= filter_qpsk:QPSK.if_out
+DAC_OUT[11] <= filter_qpsk:QPSK.if_out
+DAC_OUT[12] <= filter_qpsk:QPSK.if_out
+DAC_OUT[13] <= filter_qpsk:QPSK.if_out
+
+
+|transmit_qpsk|filter_qpsk:QPSK
+clock_5000 => clock_5000.IN1
+reset => reset.IN5
+if_out[0] <= if_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[1] <= if_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[2] <= if_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[3] <= if_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[4] <= if_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[5] <= if_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[6] <= if_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[7] <= if_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[8] <= if_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[9] <= if_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[10] <= if_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[11] <= if_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[12] <= if_out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+if_out[13] <= if_out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+base_out[0] <= sum[0].DB_MAX_OUTPUT_PORT_TYPE
+base_out[1] <= sum[1].DB_MAX_OUTPUT_PORT_TYPE
+base_out[2] <= sum[2].DB_MAX_OUTPUT_PORT_TYPE
+base_out[3] <= sum[3].DB_MAX_OUTPUT_PORT_TYPE
+base_out[4] <= sum[4].DB_MAX_OUTPUT_PORT_TYPE
+base_out[5] <= sum[5].DB_MAX_OUTPUT_PORT_TYPE
+base_out[6] <= sum[6].DB_MAX_OUTPUT_PORT_TYPE
+base_out[7] <= sum[7].DB_MAX_OUTPUT_PORT_TYPE
+base_out[8] <= sum[8].DB_MAX_OUTPUT_PORT_TYPE
+base_out[9] <= sum[9].DB_MAX_OUTPUT_PORT_TYPE
+base_out[10] <= sum[10].DB_MAX_OUTPUT_PORT_TYPE
+base_out[11] <= sum[11].DB_MAX_OUTPUT_PORT_TYPE
+base_out[12] <= sum[12].DB_MAX_OUTPUT_PORT_TYPE
+base_out[13] <= sum[13].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|clock_generator:C
+clock => clock.IN1
+reset => reset.IN3
+count[0] <= clock_inv2.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= clock_inv4.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= clock_inv8.DB_MAX_OUTPUT_PORT_TYPE
+clock_mod2 <= clock_mod2.DB_MAX_OUTPUT_PORT_TYPE
+clock_mod4 <= clock_mod4.DB_MAX_OUTPUT_PORT_TYPE
+clock_mod8 <= d_filp_flop:D2.q
+
+
+|transmit_qpsk|filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D0
+clock => q~reg0.CLK
+reset => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D1
+clock => q~reg0.CLK
+reset => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|clock_generator:C|d_filp_flop:D2
+clock => q~reg0.CLK
+reset => q~reg0.ACLR
+d => q~reg0.DATAIN
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|pn_gen:S0
+clock => pn_roll~reg0.CLK
+clock => state[0]~reg0.CLK
+clock => state[1]~reg0.CLK
+clock => state[2]~reg0.CLK
+clock => state[3]~reg0.CLK
+clock => state[4]~reg0.CLK
+clock => state[5]~reg0.CLK
+clock => state[6]~reg0.CLK
+clock => state[7]~reg0.CLK
+clock => state[8]~reg0.CLK
+clock => state[9]~reg0.CLK
+clock => state[10]~reg0.CLK
+clock => state[11]~reg0.CLK
+pn_out <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pn_roll <= pn_roll~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reset => pn_roll~reg0.PRESET
+reset => state[0]~reg0.PRESET
+reset => state[1]~reg0.ACLR
+reset => state[2]~reg0.ACLR
+reset => state[3]~reg0.ACLR
+reset => state[4]~reg0.ACLR
+reset => state[5]~reg0.ACLR
+reset => state[6]~reg0.ACLR
+reset => state[7]~reg0.ACLR
+reset => state[8]~reg0.ACLR
+reset => state[9]~reg0.ACLR
+reset => state[10]~reg0.ACLR
+reset => state[11]~reg0.ACLR
+state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[2] <= state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[3] <= state[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[4] <= state[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[5] <= state[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[6] <= state[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[7] <= state[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[8] <= state[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[9] <= state[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[10] <= state[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[11] <= state[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|pn_gen:S1
+clock => pn_roll~reg0.CLK
+clock => state[0]~reg0.CLK
+clock => state[1]~reg0.CLK
+clock => state[2]~reg0.CLK
+clock => state[3]~reg0.CLK
+clock => state[4]~reg0.CLK
+clock => state[5]~reg0.CLK
+clock => state[6]~reg0.CLK
+clock => state[7]~reg0.CLK
+clock => state[8]~reg0.CLK
+clock => state[9]~reg0.CLK
+clock => state[10]~reg0.CLK
+clock => state[11]~reg0.CLK
+pn_out <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pn_roll <= pn_roll~reg0.DB_MAX_OUTPUT_PORT_TYPE
+reset => pn_roll~reg0.PRESET
+reset => state[0]~reg0.PRESET
+reset => state[1]~reg0.PRESET
+reset => state[2]~reg0.ACLR
+reset => state[3]~reg0.ACLR
+reset => state[4]~reg0.ACLR
+reset => state[5]~reg0.ACLR
+reset => state[6]~reg0.ACLR
+reset => state[7]~reg0.ACLR
+reset => state[8]~reg0.ACLR
+reset => state[9]~reg0.ACLR
+reset => state[10]~reg0.ACLR
+reset => state[11]~reg0.ACLR
+state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[2] <= state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[3] <= state[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[4] <= state[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[5] <= state[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[6] <= state[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[7] <= state[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[8] <= state[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[9] <= state[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[10] <= state[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[11] <= state[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|tdl:I
+in => out[0]~reg0.DATAIN
+clock => out[0]~reg0.CLK
+clock => out[1]~reg0.CLK
+clock => out[2]~reg0.CLK
+clock => out[3]~reg0.CLK
+clock => out[4]~reg0.CLK
+clock => out[5]~reg0.CLK
+clock => out[6]~reg0.CLK
+clock => out[7]~reg0.CLK
+clock => out[8]~reg0.CLK
+clock => out[9]~reg0.CLK
+clock => out[10]~reg0.CLK
+clock => out[11]~reg0.CLK
+clock => out[12]~reg0.CLK
+clock => out[13]~reg0.CLK
+clock => out[14]~reg0.CLK
+clock => out[15]~reg0.CLK
+clock => out[16]~reg0.CLK
+reset => out[0]~reg0.ACLR
+reset => out[1]~reg0.ACLR
+reset => out[2]~reg0.ACLR
+reset => out[3]~reg0.ACLR
+reset => out[4]~reg0.ACLR
+reset => out[5]~reg0.ACLR
+reset => out[6]~reg0.ACLR
+reset => out[7]~reg0.ACLR
+reset => out[8]~reg0.ACLR
+reset => out[9]~reg0.ACLR
+reset => out[10]~reg0.ACLR
+reset => out[11]~reg0.ACLR
+reset => out[12]~reg0.ACLR
+reset => out[13]~reg0.ACLR
+reset => out[14]~reg0.ACLR
+reset => out[15]~reg0.ACLR
+reset => out[16]~reg0.ACLR
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[16] <= out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|tdl:Q
+in => out[0]~reg0.DATAIN
+clock => out[0]~reg0.CLK
+clock => out[1]~reg0.CLK
+clock => out[2]~reg0.CLK
+clock => out[3]~reg0.CLK
+clock => out[4]~reg0.CLK
+clock => out[5]~reg0.CLK
+clock => out[6]~reg0.CLK
+clock => out[7]~reg0.CLK
+clock => out[8]~reg0.CLK
+clock => out[9]~reg0.CLK
+clock => out[10]~reg0.CLK
+clock => out[11]~reg0.CLK
+clock => out[12]~reg0.CLK
+clock => out[13]~reg0.CLK
+clock => out[14]~reg0.CLK
+clock => out[15]~reg0.CLK
+clock => out[16]~reg0.CLK
+reset => out[0]~reg0.ACLR
+reset => out[1]~reg0.ACLR
+reset => out[2]~reg0.ACLR
+reset => out[3]~reg0.ACLR
+reset => out[4]~reg0.ACLR
+reset => out[5]~reg0.ACLR
+reset => out[6]~reg0.ACLR
+reset => out[7]~reg0.ACLR
+reset => out[8]~reg0.ACLR
+reset => out[9]~reg0.ACLR
+reset => out[10]~reg0.ACLR
+reset => out[11]~reg0.ACLR
+reset => out[12]~reg0.ACLR
+reset => out[13]~reg0.ACLR
+reset => out[14]~reg0.ACLR
+reset => out[15]~reg0.ACLR
+reset => out[16]~reg0.ACLR
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[16] <= out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|mux_2to1:M
+in_i[0] => out.DATAA
+in_i[1] => out.DATAA
+in_i[2] => out.DATAA
+in_i[3] => out.DATAA
+in_i[4] => out.DATAA
+in_i[5] => out.DATAA
+in_i[6] => out.DATAA
+in_i[7] => out.DATAA
+in_i[8] => out.DATAA
+in_i[9] => out.DATAA
+in_i[10] => out.DATAA
+in_i[11] => out.DATAA
+in_i[12] => out.DATAA
+in_i[13] => out.DATAA
+in_i[14] => out.DATAA
+in_i[15] => out.DATAA
+in_i[16] => out.DATAA
+in_q[0] => out.DATAB
+in_q[1] => out.DATAB
+in_q[2] => out.DATAB
+in_q[3] => out.DATAB
+in_q[4] => out.DATAB
+in_q[5] => out.DATAB
+in_q[6] => out.DATAB
+in_q[7] => out.DATAB
+in_q[8] => out.DATAB
+in_q[9] => out.DATAB
+in_q[10] => out.DATAB
+in_q[11] => out.DATAB
+in_q[12] => out.DATAB
+in_q[13] => out.DATAB
+in_q[14] => out.DATAB
+in_q[15] => out.DATAB
+in_q[16] => out.DATAB
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+sel => out.OUTPUTSELECT
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[16] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R00
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R01
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R02
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R03
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R04
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R05
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R06
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R07
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R08
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R09
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R10
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R11
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R12
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R13
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R14
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R15
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+
+|transmit_qpsk|filter_qpsk:QPSK|coeff_rom:R16
+address[0] => coeff_rom.RADDR
+address[1] => coeff_rom.RADDR1
+address[2] => coeff_rom.RADDR2
+data[0] <= coeff_rom.DATAOUT
+data[1] <= coeff_rom.DATAOUT1
+data[2] <= coeff_rom.DATAOUT2
+data[3] <= coeff_rom.DATAOUT3
+data[4] <= coeff_rom.DATAOUT4
+data[5] <= coeff_rom.DATAOUT5
+data[6] <= coeff_rom.DATAOUT6
+data[7] <= coeff_rom.DATAOUT7
+data[8] <= coeff_rom.DATAOUT8
+data[9] <= coeff_rom.DATAOUT9
+data[10] <= coeff_rom.DATAOUT10
+data[11] <= coeff_rom.DATAOUT11
+data[12] <= coeff_rom.DATAOUT12
+data[13] <= coeff_rom.DATAOUT13
+
+

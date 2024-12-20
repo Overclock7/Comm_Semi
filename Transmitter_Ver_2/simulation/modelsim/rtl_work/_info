@@ -1,0 +1,185 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Overclock\Desktop\Comm_Semi\Transmitter_Ver_2\simulation\modelsim
+vclock_generator_2
+I5h4:GbOTZb^h>1EGHm0:b3
+V0GP>FGL;;cOb=:OgW4K?P0
+Z1 dC:\Users\Overclock\Desktop\Comm_Semi\Transmitter_Ver_2\simulation\modelsim
+w1734057662
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/clock_generator_2.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/clock_generator_2.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2 -O0
+!i10b 1
+!s100 SN@MZ5fBYNDg]?]I23]_=3
+!s85 0
+!s108 1734327725.747000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/clock_generator_2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/clock_generator_2.v|
+!s101 -O0
+vcoeff_rom
+IM9hJB06MW7=^8Efg_m_kB0
+VGz7]cTmVNYN<<i1003=eR0
+R1
+w1731505094
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/coeff_rom.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/coeff_rom.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 1:JK:H2gYd8MNMo4:7kc?0
+!s85 0
+!s108 1734327725.699000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/coeff_rom.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/coeff_rom.v|
+!s101 -O0
+vfilter_16qam
+I6YW]RgZ`IedzVDL5NnZ`e1
+Vz`I5@fSW[1T=ggU1G6JiU0
+R1
+w1734327655
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/filter_16qam.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/filter_16qam.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 W2Uj7_GQ9f372?I59?Gzg0
+!s85 0
+!s108 1734327725.656000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/filter_16qam.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/filter_16qam.v|
+!s101 -O0
+vmux_4to2
+I?zPd5n4CW`YE<keY_lSJ82
+VFSlZ<5VNM:kW[TlYnj9002
+R1
+w1732078772
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/mux_4to2.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/mux_4to2.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 z@E4gJzeFiiBMO?D7DM<01
+!s85 0
+!s108 1734327725.604000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/mux_4to2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/mux_4to2.v|
+!s101 -O0
+vpn_gen
+IX@50cGTAW^lhDgK3]_iOi3
+VdQXMA`b0W6J90IMnhV3ah2
+R1
+w1730957896
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/pn_gen.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/pn_gen.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 CVK1Jn_GDBK1NWGVH2l_H2
+!s85 0
+!s108 1734327725.573000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/pn_gen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/pn_gen.v|
+!s101 -O0
+vregister
+IEZbE3CE5h]Sc;O38PYjHc0
+VBMBf3`_D>`e2:DP>BJKiQ2
+R1
+w1734056488
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/register.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/register.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 ^z[U3Qkj8KTkWASWKc=jC2
+!s85 0
+!s108 1734327725.516000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/register.v|
+!s101 -O0
+vtb_transmit_16qam
+!i10b 1
+!s100 F46dm3b1BzLmb^3P6A`Dc0
+IM]8RAk51M]T7`ZgjfeoBR2
+VQPdiB<CLk[2>?iQ7a=BZn1
+R1
+w1734327690
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tb_transmit_16qam.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tb_transmit_16qam.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1734327725.778000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tb_transmit_16qam.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tb_transmit_16qam.v|
+!s101 -O0
+R3
+R4
+vtdl
+IXP7ljlFI[m[AFEzHMdH]10
+V523fha?ElI9IN[D@jnmnO3
+R1
+w1733144305
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tdl.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tdl.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 d?Ac5HOKzCW;QmFj4Oa=W1
+!s85 0
+!s108 1734327725.476000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tdl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/tdl.v|
+!s101 -O0
+vtransmit_16qam
+IRbRzA1QGPTD0<OF2YIEGm0
+VYNOhj7[3L3DLB07h[T`3b3
+R1
+w1734326894
+8C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/transmit_16qam.v
+FC:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/transmit_16qam.v
+L0 1
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 V2JKO9ObD2YA@^WJIM=b90
+!s85 0
+!s108 1734327725.430000
+!s107 C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/transmit_16qam.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2|C:/Users/Overclock/Desktop/Comm_Semi/Transmitter_Ver_2/transmit_16qam.v|
+!s101 -O0
